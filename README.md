@@ -12,6 +12,7 @@ Para iniciar, siga os passos abaixo:
    bash
    
   `npm install`
+  
 Inicie o backend fake: Para rodar um servidor backend fake, execute:
 
 bash
