@@ -9,11 +9,13 @@ Para iniciar, siga os passos abaixo:
 1. **Instale as dependências**:
    Execute o comando a seguir para instalar as dependências necessárias do projeto:
 
-   ```bash
+   bash
+   
   `npm install`
 Inicie o backend fake: Para rodar um servidor backend fake, execute:
 
 bash
+
 `npm run json:server`
 
 Inicie o servidor de desenvolvimento: Depois de iniciar o backend, execute o seguinte comando para iniciar a aplicação na porta 3000:
