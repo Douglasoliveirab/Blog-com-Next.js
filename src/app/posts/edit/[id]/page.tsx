@@ -1,45 +1,66 @@
 'use client';
 
-import { Post } from '@/app/dtos/post.dtos';
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import Link from "next/link";
+import { useEditViewModel } from "./editViewModel";
 
 const PostPage: React.FC = () => {
-    const { id } = useParams();
-    const [post, setPost] = useState<Post>();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchPost = async () => {
-            if (id) {
-                try {
-                    const response = await fetch(`http://localhost:4000/posts/${id}`);
-                    if (!response.ok) {
-                        throw new Error('Failed to fetch post');
-                    }
-                    const data = await response.json();
-                    setPost(data);
-                } catch (err) {
-                    setError((err as Error).message);
-                } finally {
-                    setLoading(false);
-                }
-            }
-        };
-
-        fetchPost();
-    }, [id]);
-
+    const {
+        form,
+        loading,
+        error,
+        handleSubmit,
+        handleChangeInput
+    } = useEditViewModel();
 
     if (loading) return <p>Carregando...</p>;
 
     if (error) return <p>Erro: {error}</p>;
 
     return (
-        <div>
-            <p>Teste: {id}</p>
-            <p>Dados do Post: {post ? post.author : 'Nenhum dado disponível'}</p>
+        <div className="w-full justify-center">
+            <Link href={'../../'}
+                className='flex items-start p-4 text-white font-bold'>
+                Voltar
+            </Link>
+
+            <div className='flex flex-col items-center mt-[50px]'>
+                <h4 className='text-white mb-6'>Criar nova postagem </h4>
+                <form onSubmit={(e) => handleSubmit(e)} className="space-y-4 w-[90%] max-w-[600px] border border-white p-4 rounded-md">
+                    <input
+                        name="title"
+                        type="text"
+                        value={form.title}
+                        onChange={(e) => handleChangeInput(e)}
+                        placeholder="Title"
+                        className="border p-2 w-full "
+                    />
+                    <input
+                        name="author"
+                        type="text"
+                        value={form.author}
+                        onChange={(e) => handleChangeInput(e)}
+                        placeholder="Author"
+                        className="border p-2 w-full"
+                    />
+                    <textarea
+                        name="content"
+                        value={form.content}
+                        onChange={(e) => handleChangeInput(e)}
+                        placeholder="Content"
+                        className="border p-2 w-full"
+                    />
+                    <input
+                        name="date"
+                        type="date"
+                        value={form.date}
+                        onChange={(e) => handleChangeInput(e)}
+                        className="border p-2 w-full"
+                    />
+                    <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded w-full">
+                        Salvar mudanças
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };
