@@ -10,7 +10,7 @@ Para iniciar, siga os passos abaixo:
    Execute o comando a seguir para instalar as dependências necessárias do projeto:
 
    ```bash
-  `npm install`
+  npm install
 Inicie o backend fake: Para rodar um servidor backend fake, execute:
 
 bash
