@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": "4026",
+      "title": "teste",
+      "content": "teste"
+    },
+    {
+      "id": 1727383608899,
+      "title": "teste",
+      "author": "douglas",
+      "content": "muito bom ",
+      "date": "2024-09-26"
+    },
+    {
+      "id": 1727385180430,
+      "title": "a",
+      "author": "a",
+      "content": "a",
+      "date": "2024-09-26"
+    },
+    {
+      "id": 1727385203100,
+      "title": "a",
+      "author": "a",
+      "content": "a",
+      "date": "2024-09-26"
+    },
+    {
+      "id": 1727388482205,
+      "title": "w",
+      "author": "w",
+      "content": "w",
+      "date": "2024-09-26"
+    }
+  ]
+}
