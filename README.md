@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog com Next.js 14
 
-## Getting Started
+Este é um projeto de blog criado com [Next.js 14](https://nextjs.org). O blog possui funcionalidades para listar, criar, atualizar e excluir posts.
 
-First, run the development server:
+## Começando
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Para iniciar, siga os passos abaixo:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Instale as dependências**:
+   Execute o comando a seguir para instalar as dependências necessárias do projeto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+  `npm install`
+Inicie o backend fake: Para rodar um servidor backend fake, execute:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+bash
+`npm run json:server`
 
-## Learn More
+Inicie o servidor de desenvolvimento: Depois de iniciar o backend, execute o seguinte comando para iniciar a aplicação na porta 3000:
 
-To learn more about Next.js, take a look at the following resources:
+bash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm run dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Acesse a aplicação: Abra http://localhost:3000 em seu navegador para ver o resultado.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Estrutura do Projeto
+O projeto foi desenvolvido utilizando o padrão MVVM (Model-View-ViewModel) para separar melhor as regras de negócio da camada de visualização.
